@@ -1,10 +1,16 @@
 .App {
   text-align: center;
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+#my-portal {
+  background-color: antiquewhite;
+  text-align: center;
+  height: 100px;
+  width: 100vw;
 }
 
 @media (prefers-reduced-motion: no-preference) {
