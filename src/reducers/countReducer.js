@@ -9,7 +9,7 @@ export const countSlice = createSlice({
     initialState,
     reducers: {
         setIncrement: (state) => {
-            state.count = state.count -1
+            state.count = state.count +1
         }, 
         setDecrement: (state) => {
             state.count = state.count -1

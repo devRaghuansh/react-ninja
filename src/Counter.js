@@ -1,19 +1,15 @@
 import React from 'react'
-import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
+import { decrementCount, incrementCount } from './action/counter'
 const Counter = () => {
-    const [count, setCount] = useState(0)
-    const handleIncrement = () => {
-        setCount(count + 1)
-    }
-    const handleDecrement = () => {
-        setCount(count - 1)
-    }
+    const dispatch = useDispatch()
+    const {count} = useSelector(state => state.counter)
     return (
         <div>
             {count}
-            <button onClick={handleDecrement}>Decrement</button>
-            <button onClick={handleIncrement}>Increment</button>
+            <button onClick={() => {dispatch(decrementCount())}}>Decrement</button>
+            <button onClick={() =>dispatch(incrementCount())}>Increment</button>
         </div>
     )
 }
