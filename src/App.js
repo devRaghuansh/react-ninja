@@ -1,22 +1,19 @@
+import { Profiler } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import UserLogin from './UserLogin';
 
 function App() {
+  const callback = (id,phase,actualDuration,  baseDuration) => {
+    console.log("id", id,phase,actualDuration, baseDuration)
+  }
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>React Profiler</h1>
+        <Profiler id='User' onRender={callback}>
+          <UserLogin />
+        </Profiler>
       </header>
     </div>
   );
